@@ -7,10 +7,10 @@ Google Authentication Using Express Node.js passport
 ### To run in localhost server
 ***
 
-[Setting up API keys](https://support.google.com/googleapi/answer/6158862?hl=en)
+[Setting up OAuth2 Authentication](https://developers.google.com/adwords/api/docs/guides/authentication)
 
 
-Add your Google Console Credentials in the below file. 
+Add your Google Console OAuth client Credentials in the below file. 
 
 **.evn**
 ```javascript
