@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-5 text-center">
+      <h4 class="mb-5 text-white">Successfully logged in with google!!!</h4>
+      <div class="card border-0 shadow align-items-center py-5 rounded">
+        <img src="<%=pic%>" class="rounded-circle" alt="user" width="100" />
+        <div class="pt-4">
+          <h5 class="card-title"><%= name %></h5>
+          <p class="card-text"><strong>email</strong>: <%= email %></p>
+        </div>
+      </div>
+      <div class="my-4">
+        <a href="/logout" type="button" class="btn custom-btn btn-block"
+          >Logout</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

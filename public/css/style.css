@@ -1,0 +1,25 @@
+.bg-block {
+    background: url('/img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.btn-google {
+    color: #545454;
+    box-shadow: 0 1px 2px 1px #ddd;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+.custom-btn {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgb(53 53 53);
+    padding: 8px 40px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgb(53 53 53);
+}
