@@ -1,7 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const expressLayouts = require('express-ejs-layouts')
+const port = 5000;
+const expressLayouts = require("express-ejs-layouts");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
 require("./passport-setup");
@@ -10,8 +11,8 @@ process.env.PWD = process.cwd();
 app.use(express.static(process.env.PWD + "/public"));
 
 // Set Templating Engine
-app.use(expressLayouts)
-app.set('layout', './layout')
+app.use(expressLayouts);
+app.set("layout", "./layout");
 
 // For an actual app you should configure this with an experation time, better keys, proxy and secure
 app.use(
@@ -35,16 +36,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get("/", (req, res) => {
-  res.render('pages/index', { title: 'Login Page'})
+  res.render("pages/index", { title: "Login Page" });
 });
 app.get("/failed", (req, res) => {
-  res.render("pages/failed", { title: 'Login Failed'});
+  res.render("pages/failed", { title: "Login Failed" });
 });
 
 // If the user is logged in, you can access his info by using: req.user
 app.get("/profile", (req, res) => {
   res.render("pages/profile", {
-    title: 'Profile Page',
+    title: "Profile Page",
     name: req.user.displayName,
     pic: req.user.photos[0].value,
     email: req.user.emails[0].value,
@@ -62,7 +63,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/failed" }),
   function (req, res) {
     // Successful authentication, redirect to profile page.
-    res.redirect("/profile");  
+    res.redirect("/profile");
   }
 );
 //logout user and redirect to login
@@ -72,4 +73,4 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(process.env.PORT||5000);
+app.listen(port, () => console.log(`App listening on port ${port}!`));
